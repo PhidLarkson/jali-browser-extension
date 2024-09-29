@@ -15,6 +15,8 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         <option value="tw">Twi</option>
         <option value="ee">Ewe</option>
         <option value="gaa">Ga</option>
+        <option value="fat">Fante</option>
+        <option value="dag">Dagbani</option>
         <option value="yo">Yoruba</option>
       </select>
 
@@ -74,7 +76,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
               headers: {
                 'Content-Type': 'application/json',
                 'Cache-Control': 'no-cache',
-                'Ocp-Apim-Subscription-Key': '9e262bab68f04e20aab7f5a9d0410c92'
+                'Ocp-Apim-Subscription-Key': 'API KEY'
               }
             })
             .then(response => response.ok ? response.blob() : Promise.reject('Audio generation failed'))
