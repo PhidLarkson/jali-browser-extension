@@ -1,30 +1,38 @@
 {
-    "manifest_version": 3,
-    "name": "JALI",
-    "version": "1.0",
-    "description": "Highlight text and translate it using a selected language.",
-    "permissions": [
-      "contextMenus",
-      "activeTab",
-      "scripting"
-    ],
-    "icons": {
+  "manifest_version": 3,
+  "name": "JALI",
+  "version": "1.0",
+  "description": "Translate text into African languages with text-to-speech capabilities and zen focus mode.",
+  "author": "GhanaNLP",
+  "permissions": [
+    "contextMenus",
+    "activeTab",
+    "storage",
+    "clipboardWrite"
+  ],
+  "icons": {
+    "16": "icons/image.png",
+    "48": "icons/image.png",
+    "128": "icons/image.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
       "16": "icons/image.png",
       "48": "icons/image.png",
       "128": "icons/image.png"
-    },
-    "background": {
-      "service_worker": "background.js"
-    },
-    "content_scripts": [
-      {
-        "matches": ["<all_urls>"],
-        "js": ["content.js"],
-        "css": ["styles.css"]
-      }
-    ],
-    "host_permissions": [
-      "https://translation-api.ghananlp.org/"
-    ]
-  }
-  
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": [
+    "https://translation-api.ghananlp.org/"
+  ]
+}
